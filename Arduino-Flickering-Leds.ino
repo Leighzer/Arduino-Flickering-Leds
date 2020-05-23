@@ -18,13 +18,10 @@ void setup() {
 void loop() {
   for(int i = ledStart; i <= ledEnd; i++){
     int ran = random(2);
-    if(ran == 0){
-      //do nothing - 50% chance
-    }
-    else{
+    if(ran != 0){
       ledStates[i] = !ledStates[i];
       digitalWrite(i,ledStates[i]);
-    }
+    }    
     delay(random(50));//random delay to make toggling more chaotic
   } 
   builtInLedState = !builtInLedState;
